@@ -1,0 +1,420 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+#wrapper {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+}
+
+#sidebar-wrapper {
+    height: 100%;
+    flex-shrink: 0;
+    width: 250px;
+    background-color: #343a40;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+#content-wrapper {
+    flex-grow: 1;
+    overflow-y: auto; /* Add this to allow vertical scrolling */
+    padding-bottom: 60px; /* Space for the fixed form */
+    padding-left: 0; /* Remove the padding to prevent the space from decreasing */
+    transition: all 0.5s ease;
+}
+
+.form-container {
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 250px); /* Adjust this value if necessary */
+    background: #f8f9fa;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    height: 12.5%;
+    left: 250px; /* Align with the sidebar width */
+    transition: all 0.5s ease;
+}
+
+.form-inline .form-control {
+    flex: 1;
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin-right: 10px; /* Adjust margin to prevent horizontal scroll */
+}
+
+.form-inline {
+    width: 100%;
+    padding: 0 15px;
+    overflow: hidden; /* Hide overflow to remove horizontal scroll bar */
+}
+
+.sidebar-brand {
+    padding: 1rem;
+    background: #23272b;
+    text-align: center;
+}
+
+.sidebar-brand img {
+    margin-right: 10px;
+}
+
+.sidebar-nav {
+    padding-left: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    width: 100%;
+}
+
+.sidebar-nav a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+.sidebar-nav a:hover {
+    background: #495057;
+}
+
+#navbar-wrapper {
+    margin-bottom: 20px;
+}
+
+#navbar-wrapper .navbar {
+    margin-bottom: 0;
+    background-color: #f8f9fa;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navbar-wrapper .navbar .navbar-brand {
+    font-size: 1.25rem;
+    color: #343a40;
+}
+
+#sidebar-toggle {
+    cursor: pointer;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 767px) {
+    #content-wrapper {
+        padding-left: 0; /* No space for sidebar on mobile */
+    }
+
+    .form-container {
+        width: 100%;
+        left: 0; /* Align with the viewport */
+    }
+
+    #navbar-wrapper .navbar {
+        justify-content: flex-end; /* Move items to the right */
+    }
+
+    #navbar-wrapper .navbar .navbar-brand.mobile-toggle {
+        margin-left: auto; /* Push the toggle button to the right */
+    }
+
+    #sidebar-wrapper {
+        width: 0;
+        display: block; /* Ensure sidebar is hidden initially */
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #content-wrapper {
+        margin-right: 0;
+        padding-left: 250px; /* Adjust content-wrapper padding when sidebar is toggled */
+    }
+
+    .form-container {
+        width: 100%;
+        left: 0; /* Align with the viewport */
+    }
+
+    #wrapper.toggled .form-container {
+        left: 250px; /* Adjust form-container position when sidebar is toggled */
+        width: calc(100% - 250px);
+    }
+}
+
+body {
+    padding-bottom: 30px;
+    position: relative;
+    min-height: 100%;
+    overflow-y: scroll; /* Add this to prevent the vertical scroll bar from moving */
+}
+
+a {
+    transition: background 0.2s, color 0.2s;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+}
+
+#wrapper {
+    padding-left: 250px; /* Keep the padding consistent */
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #222;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+.sidebar-brand {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.sidebar-brand h2 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 24px;
+    color: #fff;
+}
+
+.sidebar-nav {
+    position: absolute;
+    top: 75px;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav > li {
+    text-indent: 10px;
+    line-height: 42px;
+}
+
+.sidebar-nav > li a {
+    display: block;
+    text-decoration: none;
+    color: #757575;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.sidebar-nav > li > a:hover,.sidebar-nav > li.active > a {
+    text-decoration: none;
+    color: #fff;
+    background: #F8BE12;
+}
+
+.sidebar-nav > li > a i.fa {
+    font-size: 24px;
+    width: 60px;
+}
+
+#navbar-wrapper {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+}
+
+#wrapper.toggled #navbar-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+#navbar-wrapper.navbar {
+    border-width: 0 0 0 0;
+    background-color: #eee;
+    font-size: 24px;
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+#navbar-wrapper.navbar a {
+    color: #757575;
+}
+
+#navbar-wrapper.navbar a:hover {
+    color: #F8BE12;
+}
+
+#content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+    top: 100px;
+    right: 0; /* Align the vertical scroll bar to the extreme right */
+}
+
+#wrapper.toggled #content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+@media (min-width: 992px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 60px;
+    }
+
+    #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 90px;
+    }
+
+    #wrapper.toggled #navbar-wrapper {
+        position: absolute;
+        margin-right: -190px;
+    }
+
+    #wrapper.toggled #content-wrapper {
+        position: absolute;
+        margin-right: -190px;
+    }
+
+    #navbar-wrapper {
+        position: relative;
+    }
+
+    #wrapper.toggled {
+        padding-left: 60px;
+    }
+
+    #content-wrapper {
+        position: relative;
+        top: 0;
+    }
+
+    #wrapper.toggled #navbar-wrapper, #wrapper.toggled #content-wrapper {
+        position: relative;
+        margin-right: 60px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #wrapper {
+        padding-left: 60px;
+    }
+
+    #sidebar-wrapper {
+        width: 60px;
+    }
+
+    #wrapper.toggled #navbar-wrapper {
+        position: absolute;
+        margin-right: -250px;
+    }
+
+    #wrapper.toggled #content-wrapper {
+        position: absolute;
+        margin-right: -250px;
+    }
+
+    #navbar-wrapper {
+        position: relative;
+    }
+
+    #wrapper.toggled {
+        padding-left: 250px;
+    }
+
+    #content-wrapper {
+        position: relative;
+        top: 0;
+    }
+
+    #wrapper.toggled #navbar-wrapper, #wrapper.toggled #content-wrapper {
+        position: relative;
+        margin-right: 250px;
+    }
+}
+
+@media (max-width: 767px) {
+    #wrapper {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 0;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #navbar-wrapper {
+        position: absolute;
+        margin-right: -250px;
+    }
+
+    #wrapper.toggled #content-wrapper {
+        position: absolute;
+        margin-right: -250px;
+    }
+
+    #navbar-wrapper {
+        position: relative;
+    }
+
+    #wrapper.toggled {
+        padding-left: 250px;
+    }
+
+    #content-wrapper {
+        position: relative;
+        top: 0;
+    }
+
+    #wrapper.toggled #navbar-wrapper, #wrapper.toggled #content-wrapper {
+        position: relative;
+        margin-right: 250px;
+    }
+}
+
+/* Additional media queries for tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    #content-wrapper {
+        padding-left: 0; /* Remove the padding to prevent the space from decreasing */
+    }
+
+    #wrapper.toggled #content-wrapper {
+        padding-left: 0; /* Remove the padding to prevent the space from decreasing */
+    }
+
+   .form-container {
+        width: calc(100% - 250px);
+        left: 220px;
+    }
+
+    #wrapper.toggled.form-container {
+        width: calc(100% - 60px);
+        left: 60px;
+    }
+}

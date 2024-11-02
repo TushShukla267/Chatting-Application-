@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="ChatBot.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <title>Echo Bot</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <aside id="sidebar-wrapper">
+        <div class="sidebar-brand">
+          <div class="d-flex align-items-center">
+            <img
+              src="ChatBotImg-removebg-preview.png"
+              alt="ChatBot img"
+              class="rounded-circle"
+              width="80px"
+            />
+            <h2 class="ml-3 mb-0">EchoBot</h2>
+          </div>
+        </div>
+        <ul class="sidebar-nav">
+          <br />
+          <li class="active">
+            <a><i class="fa fa-user"></i> <span class="menu-text" id="UserName"></span></a>
+          </li>
+          <br />
+          <li>
+            <a><i class="fa fa-history"></i> <span class="menu-text">History</span></a>
+          </li>
+          <br />
+          <li>
+            <a><i class="fa fa-save"></i> <span class="menu-text">My Saved</span></a>
+          </li>
+          <br />
+          <li>
+            <a><i class="fa fa-cog"></i> <span class="menu-text">Settings</span></a>
+          </li>
+          <br />
+          <li>
+            <a  id="log_out"><i class="fa fa-sign-out-alt"></i> <span class="menu-text">Log out</span></a>
+          </li>
+          <br />
+          <li>
+            <a><i class="fa fa-infinity"></i> <span class="menu-text">Powered by Gemini</span></a>
+          </li>                                                 
+        </ul>
+      </aside>
+      <div id="content-wrapper" class="flex-grow-1">
+        <div id="navbar-wrapper">
+          <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a
+                 
+                  class="navbar-brand mobile-toggle"
+                  id="sidebar-toggle"
+                  ><i class="fa fa-bars"></i
+                ></a>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <section class="container">
+          <div class="row">
+            <!-- First Card Component (Left)
+            <div class="col-md-12 mb-3">
+              <div class="d-flex justify-content-start">
+                <div
+                  class="card text-white bg-secondary mb-3"
+                  style="width: 75%"
+                >
+                  <div class="card-header">Hi There</div>
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      hi there how can i help you today
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            Second Card Component (Right)
+            <div class="col-md-12 mb-3">
+              <div class="d-flex justify-content-end">
+                <div class="card bg-light mb-3" style="width: 75%">
+                  <div class="card-header">web development</div>
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      can you tell me what is web development what are the tools
+                      and technolgy used
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            Additional Card Component
+            <div class="col-md-12 mb-3">
+              <div class="d-flex justify-content-start">
+                <div
+                  class="card text-white bg-secondary mb-3"
+                  style="width: 75%"
+                >
+                  <div class="card-header">Web Development in a Nutshell</div>
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      Web development is the process of creating, building, and
+                      maintaining websites. It involves combining design,
+                      programming, and database management.
+                      <br />
+                      Core Technologies:
+                      <br />
+                      HTML: Structures the content of a webpage.
+                      <br />
+                      CSS: Styles the appearance of a webpage.
+                      <br />
+                      JavaScript: Adds interactivity and dynamic behavior.
+                      <br />
+                      Additional Tools and Technologies:
+                      <br />
+                      Frontend Development: Focuses on the user interface.
+                      <br />
+                      Frameworks like React, Angular, Vue
+                      <br />
+                      Preprocessors like Sass, Less
+                      <br />
+                      Backend Development: Handles server-side logic and
+                      databases.
+                      <br />
+                      Languages like Python, Ruby, PHP, Node.js
+                      <br />
+                      Databases like MySQL, PostgreSQL, MongoDB
+                      <br />
+                      Frameworks like Django, Ruby on Rails, Laravel
+                      <br />
+                      Version Control: Manages code changes.
+                      <br />
+                      Git is the most popular.
+                      <br />
+                      Deployment: Publishes websites to the internet.
+                      <br />
+                      Platforms like Netlify, Vercel, Heroku
+                      <br />
+                      In essence, web development is about creating engaging
+                      online experiences using a combination of these
+                      technologies and tools.
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="form-container">
+      <form class="form-inline justify-content-center">
+        <textarea
+        id ="textarea"
+          class="form-control mr-sm-2"
+          placeholder="Search"
+          aria-label="Search"
+          style="width: 50%"
+        ></textarea>
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="Search">
+          Search
+        </button>
+      </form>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+
+    <script src="ChatBot.js"></script>
+  </body>
+</html>

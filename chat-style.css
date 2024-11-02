@@ -1,0 +1,139 @@
+/* chat-style.css */
+
+body {
+    background-color: #e5ddd5;
+    font-family: Arial, sans-serif;
+}
+
+.chatBtns {
+    position: fixed;
+    width: 75px;
+    height: 75px;
+    border: none;
+    outline: none;
+    background-image: url("ChatBotImg-removebg-preview.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    right: 5%;
+    bottom: 13%;
+    z-index: 99;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff; /* Text color for better visibility */
+}
+
+.chatBtns h3 {
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 0;
+    color: black;
+    padding-top: 100px;
+}
+
+
+.chat-container {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.chat-box {
+    height: 400px;
+    overflow-y: scroll;
+    background: #dcf8c6;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    background-image: url('ChatBackgroundIMG.jpg');
+}
+
+.message {
+    max-width: 75%;
+    padding: 8px 12px;
+    margin: 5px 0;
+    border-radius: 7.5px;
+    font-size: 0.95rem;
+    display: inline-block;
+    line-height: 1.4;
+}
+
+.sent {
+    background-color: #d9fdd3;
+    align-self: flex-end;
+    text-align: right;
+    color: #111;
+    border-top-right-radius: 0;
+}
+
+.received {
+    background-color: #ffffff;
+    align-self: flex-start;
+    text-align: left;
+    color: #111;
+    border-top-left-radius: 0;
+}
+
+.login-box,
+.chat-room {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-form {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 0 0 10px 10px;
+}
+
+.message-input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.send-btn {
+    background-color: #25d366;
+    color: #ffffff;
+    margin-left: 10px;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.send-btn:hover {
+    background-color: #20b358;
+}
+
+.exit-btn {
+    background-color: #dc3545;
+    color: #ffffff;
+    margin-top: 10px;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.exit-btn:hover {
+    background-color: #c82333;
+}
+
+.message strong {
+    font-weight: bold;
+}

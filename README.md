@@ -1,2 +1,2 @@
 # Chatting-Application-
-This is a Chatting Application like WhatsApp 
+This is a Chatting Application like WhatsApp

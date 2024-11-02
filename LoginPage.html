@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="LoginPage.css" rel="stylesheet" type="text/css">
+  <title>LoginPage</title>
+</head>
+<body class="main">
+  <div class="text"></div>
+  <form id="loginForm" class="Login-div" action="/ChatBotProject/Login.php" method="post">
+      <div class="Login-sub-div1">
+        <br><br>
+          <div class="text1"></div>
+          <div class="text2"></div>
+          <br>
+          <input type="text" id="username" placeholder="Username" class="Username-container" name="username">
+          <br><br>
+          <input type="password" id="password" placeholder="Password" class="password-container" name="password">
+          <br><br><br>
+          <button type="submit" class="Login-btn">Log in</button>
+          <br><br>
+          <a href="ForgotPassword.html">
+            <div class="text3">Forgot password ?</div>
+          </a>
+          <br>
+          <div class="line"><hr></div>
+          <a href="#">
+            <div class="Google-login-container">
+              <img src="Google_icon.png" alt="Google-icon" width="50">
+            </div>
+          </a>
+          <a href="SignUpPage.html">
+            <div class="text4">Don’t have an account ? Signup</div>
+          </a>
+      </div>
+  </form>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="LoginPage.js"></script>
+</body>
+</html>
