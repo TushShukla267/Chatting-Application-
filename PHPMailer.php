@@ -13,8 +13,8 @@ function sendMail($to , $subject , $message , $cc , $additionalHeaders = null) {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';    // Set the SMTP server
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'tushar.shukla@somaiya.edu'; // SMTP username
-        $mail->Password   = 'jgyt lhlc yivq idkc';    // SMTP password
+        $mail->Username   = 'SMTP_Username'; // SMTP username
+        $mail->Password   = 'SMTP_Password';    // SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
